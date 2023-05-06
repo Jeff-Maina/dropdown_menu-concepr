@@ -39,10 +39,10 @@ body {
   z-index: 9;
 }
 
-#hamburger svg{
-    width: 2.5em;
-    fill: #fff;
-    height: 2.5em;
+#hamburger svg {
+  width: 2.5em;
+  fill: #fff;
+  height: 2.5em;
 }
 
 @keyframes border-transform {
@@ -159,6 +159,10 @@ body {
   background-color: violet;
 }
 
+.option:hover h4 {
+  color: #fff;
+}
+
 .option h4 {
   font-size: 1.7rem;
   margin: 0;
@@ -168,10 +172,6 @@ body {
   transform: translate(60px, 0px);
   opacity: 0;
   transition: transform 200ms;
-}
-
-.option h4:hover {
-  color: #fff;
 }
 
 #ham-checkbox:checked ~ #dropdown .option h4 {
