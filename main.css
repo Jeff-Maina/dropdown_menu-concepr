@@ -1,0 +1,187 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i");
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900");
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #f0e7e7;
+}
+
+#menu {
+  width: 20em;
+  height: 30em;
+  /* background-color: black; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#dropdown-box {
+  height: 25em;
+  width: 18em;
+  /* border: 1px solid #fff; */
+  position: relative;
+}
+
+#hamburger {
+  width: 4em;
+  height: 4em;
+  pointer-events: none;
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.861);
+  animation: border-transform 7s linear forwards infinite;
+}
+
+@keyframes border-transform {
+  0%,
+  100% {
+    border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%;
+  }
+  14% {
+    border-radius: 40% 60% 54% 46% / 49% 60% 40% 51%;
+  }
+  28% {
+    border-radius: 54% 46% 38% 62% / 49% 70% 30% 51%;
+  }
+  42% {
+    border-radius: 61% 39% 55% 45% / 61% 38% 62% 39%;
+  }
+  56% {
+    border-radius: 61% 39% 67% 33% / 70% 50% 50% 30%;
+  }
+  70% {
+    border-radius: 50% 50% 34% 66% / 56% 68% 32% 44%;
+  }
+  84% {
+    border-radius: 46% 54% 50% 50% / 35% 61% 39% 65%;
+  }
+}
+
+#ham-checkbox {
+  cursor: pointer;
+  width: 4em;
+  height: 4em;
+  position: absolute;
+  top: 0;
+  z-index: 10;
+  left: 0;
+  opacity: 0;
+}
+
+#shadow {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0%;
+  height: 0%;
+  border-radius: 0px;
+  border-bottom-right-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.205);
+  transition: border-radius linear 0.5s,
+    width cubic-bezier(0.77, 0, 0.175, 1) 0.6s,
+    height cubic-bezier(0.77, 0, 0.175, 1) 0.6s;
+  transition-delay: 0.1s;
+}
+
+#ham-checkbox:checked ~ #dropdown {
+  width: 100%;
+  height: 100%;
+  border-bottom-right-radius: 24px;
+  transition-delay: 0.1s;
+  padding-top: 3em;
+}
+
+#ham-checkbox:checked ~ #shadow {
+  width: 100%;
+  height: 100%;
+  border-radius: 22px;
+  transition: border-radius linear 0.5s,
+    width cubic-bezier(0.77, 0, 0.175, 1) 0.6s,
+    height cubic-bezier(0.77, 0, 0.175, 1) 0.6s;
+  transition-delay: 0s;
+}
+
+#dropdown {
+  width: 0%;
+  height: 0%;
+  position: absolute;
+  top: 0;
+  border-radius: 22px;
+  left: 0;
+  border-top-left-radius: 0%;
+  border-bottom-right-radius: 24px;
+  background-image: url("https://i.pinimg.com/564x/e8/e2/6b/e8e26bb027feec6c399d64edf6d9f63f.jpg");
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  transition: border-radius linear 0.5s,
+    width cubic-bezier(0.77, 0, 0.175, 1) 0.6s,
+    height cubic-bezier(0.77, 0, 0.175, 1) 0.6s;
+  transition-delay: 0s;
+  box-shadow: 6px 7px 28px 0 rgba(16, 16, 16, 0.3);
+  overflow: hidden;
+  box-sizing: border-box;
+  z-index: 3;
+}
+
+.option {
+  width: 18em;
+  height: 4em;
+  color: #b8b7b7;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0 50px;
+  overflow: hidden;
+  position: relative;
+}
+
+.option:hover::before {
+  position: absolute;
+  content: "";
+  width: 10px;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: violet;
+}
+
+.option h4 {
+  font-size: 1.7rem;
+  margin: 0;
+  font-family: Poppins;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transform: translate(60px, 0px);
+  opacity: 0;
+  transition: transform 200ms;
+}
+
+.option h4:hover {
+  color: #fff;
+}
+
+#ham-checkbox:checked ~ #dropdown .option h4 {
+  transform: translate(0px, 0px);
+  opacity: 1;
+  transition: transform 300ms ease, opacity 350ms ease;
+}
+
+#ham-checkbox:checked ~ #dropdown .option:nth-child(1) h4 {
+  transition-delay: 0.6s;
+}
+#ham-checkbox:checked ~ #dropdown .option:nth-child(2) h4 {
+  transition-delay: 0.7s;
+}
+#ham-checkbox:checked ~ #dropdown .option:nth-child(3) h4 {
+  transition-delay: 0.8s;
+}
+#ham-checkbox:checked ~ #dropdown .option:nth-child(4) h4 {
+  transition-delay: 0.9s;
+}
+#ham-checkbox:checked ~ #dropdown .option:nth-child(5) h4 {
+  transition-delay: 1s;
+}
