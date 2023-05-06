@@ -33,6 +33,16 @@ body {
   position: relative;
   background-color: rgba(0, 0, 0, 0.861);
   animation: border-transform 7s linear forwards infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9;
+}
+
+#hamburger svg{
+    width: 2.5em;
+    fill: #fff;
+    height: 2.5em;
 }
 
 @keyframes border-transform {
